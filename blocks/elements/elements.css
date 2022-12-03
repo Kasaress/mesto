@@ -1,0 +1,13 @@
+.elements {
+  display: grid;
+  row-gap: 20px;
+  column-gap: 17px;
+  margin: 47.25px auto 0px;
+  max-width: 880px;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
