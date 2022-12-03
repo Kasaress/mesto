@@ -1,0 +1,18 @@
+.header__logo {
+    width: 142px;
+    /* height: 33px; */
+    margin: 0;
+    padding-bottom: 41px;
+    /* object-fit: contain; */
+    display: block;
+    /* border: 1px solid blue; */
+    object-fit: none;
+    object-position: top left;
+  }
+  /* @media screen and (max-width: 767px) {
+    .header__logo  {
+      width: 142px;
+      height: 42px;
+      padding-top: 16px;
+    }
+  } */
