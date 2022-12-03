@@ -5,3 +5,16 @@
   justify-content: space-between;
   color: white;
 }
+
+.profile__first-column {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profile__second-column {
+  width: 150px;
+}
+
+.profile__name-and-edit {
+  display: flex;
+}

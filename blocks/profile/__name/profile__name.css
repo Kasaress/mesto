@@ -3,9 +3,8 @@
   font-size: 42px;
   line-height: 48px;
   color: #FFFFFF;
-  max-width: 294px;
+  width: 294px;
   margin: 0;
   padding: 0;
-  align-self: end;
   text-rendering: optimizeLegibility;
 }

@@ -1,0 +1,12 @@
+.profile__edit-button {
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  color: #FFFFFF;
+  margin-left: 18px;
+  margin-bottom: 9px;
+  align-self: flex-end;
+  background-image: url(../../../images/slash.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
