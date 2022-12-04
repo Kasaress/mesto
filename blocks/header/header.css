@@ -4,21 +4,10 @@
     max-width: 880px;
     border-bottom: 1px solid #545454;
   }
-  
-  /* @media screen and (max-width: 1279px) {
-    .header  {
-      margin: 0 48px 48px;
-    }
-  }
-  
-  @media screen and (max-width: 1023px) {
-    .header  {
-      margin: 0 24px 48px;
-    }
-  }
-  
+    
   @media screen and (max-width: 767px) {
     .header  {
-      margin: 0 16px 48px;
+      max-width: 320px;
+      margin: 28px 0 40px;
     }
-  } */
+  }

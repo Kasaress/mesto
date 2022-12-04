@@ -1,18 +1,18 @@
 .header__logo {
     width: 142px;
-    /* height: 33px; */
     margin: 0;
     padding-bottom: 40px;
-    /* object-fit: contain; */
     display: block;
-    /* border: 1px solid blue; */
     object-fit: none;
     object-position: top left;
   }
-  /* @media screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .header__logo  {
-      width: 142px;
-      height: 42px;
-      padding-top: 16px;
+      width: 103.74px;
+      height: 24.4px;
+      padding-bottom: 31.6px;
+      padding-left: 8px;
+      margin-left: 20px;
+      object-fit: contain;
     }
-  } */
+  }
