@@ -1,0 +1,5 @@
+.element__like-button_deactive {
+    background-image: url(../../../images/like_deactive.svg);
+    background-position: center;
+  background-repeat: no-repeat;
+}

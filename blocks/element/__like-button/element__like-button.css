@@ -1,5 +1,5 @@
 .element__like-button {
-  background-image: url(../../../images/heart.svg);
+  background-image: url(../../../images/like_deactive.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: white;
@@ -8,6 +8,6 @@
   height: 19px;
   align-self: center;
   padding: 0;
-  padding-right: 50px; /* переписать костыль */
+  padding-right: 60px; /* переписать костыль */
 
 }
