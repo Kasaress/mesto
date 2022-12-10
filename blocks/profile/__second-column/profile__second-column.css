@@ -1,0 +1,9 @@
+.profile__second-column {
+    width: 150px;
+  }
+
+@media screen and (max-width: 767px) {
+  .profile__second-column  {
+    width: 282px;
+  }
+}

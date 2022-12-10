@@ -6,16 +6,16 @@
   }
     
 
-  @media screen and (max-width: 999px) {
-    .header  {
-      max-width: 640px;
-      margin: 28px auto 40px;
-    }
+@media screen and (max-width: 999px) {
+  .header  {
+    max-width: 640px;
+    margin: 28px auto 40px;
   }
+}
 
-  @media screen and (max-width: 767px) {
-    .header  {
-      max-width: 320px;
-      margin: 28px 0 40px;
-    }
-  }
+@media screen and (max-width: 767px) {
+  .header  {
+    max-width: 320px;
+    margin: 28px 0 40px;
+ }
+}

@@ -8,7 +8,6 @@
     padding-top: 10px;
 }
 
-
 @media screen and (max-width: 767px) {
     .profile__description  {
         font-weight: 400;
