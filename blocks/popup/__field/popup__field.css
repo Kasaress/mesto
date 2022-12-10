@@ -1,10 +1,9 @@
 .popup__field {
   background-color: white;
   text-align: start;
-  margin: 0;
   width: 358px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: none
+  border: none;
 }
