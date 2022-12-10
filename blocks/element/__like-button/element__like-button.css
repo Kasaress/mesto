@@ -8,6 +8,9 @@
   height: 19px;
   align-self: center;
   padding: 0;
-  padding-right: 60px; /* переписать костыль */
+  padding-right: 60px;
+}
 
+.element__like-button:hover {
+  opacity: 0.5;
 }

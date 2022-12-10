@@ -3,3 +3,16 @@
   height: 282px;
   object-fit: cover;
 }
+
+
+@media screen and (max-width: 999px) {
+  .element__image {
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .element__image {
+    width: 282px;
+  }
+}

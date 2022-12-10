@@ -12,12 +12,14 @@
 }
 
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 999px) {
   .elements {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
+      max-width: 640px;
   }
 }
+
 
 @media screen and (max-width: 767px) {
   .elements {

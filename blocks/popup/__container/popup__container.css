@@ -1,0 +1,32 @@
+.popup__container {
+    align-items: center;
+    display: flex;
+    margin: 195px auto auto auto;
+    z-index: 2; 
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 430px;
+    /* height: 370px; */
+    /* box-sizing: border-box; */
+}
+
+.popup__form {
+    /* width: 430px;
+    height: 330px; */
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    /* padding: 34px auto 37px 36px; */
+}
+
+.popup__input {
+    background-color: white;
+    color: black;
+}

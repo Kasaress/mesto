@@ -43,6 +43,14 @@
   }
 }
 
+
+@media screen and (max-width: 999px) {
+  .profile   {
+    max-width: 640px;
+  }
+}
+
+
 @media screen and (max-width: 767px) {
   .profile  {
     max-width: 282px;
@@ -50,3 +58,4 @@
     flex-direction: column;
   }
 }
+

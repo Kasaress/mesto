@@ -5,6 +5,14 @@
     border-bottom: 1px solid #545454;
   }
     
+
+  @media screen and (max-width: 999px) {
+    .header  {
+      max-width: 640px;
+      margin: 28px auto 40px;
+    }
+  }
+
   @media screen and (max-width: 767px) {
     .header  {
       max-width: 320px;
