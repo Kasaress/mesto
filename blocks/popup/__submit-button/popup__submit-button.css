@@ -3,5 +3,27 @@
   height: 50px;
   color: white;
   text-align: center;
-  margin: 18px auto 37px;
+  margin: 32px auto 37px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 2px;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.popup__submit-button:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__submit-button {
+    width: 238px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 25px;
+  }
 }

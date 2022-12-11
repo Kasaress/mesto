@@ -9,6 +9,10 @@
   align-self: center;
   padding: 0;
   padding-right: 60px;
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
 }
 
 .element__like-button:hover {

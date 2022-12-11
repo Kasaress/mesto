@@ -5,15 +5,16 @@
     color: #FFFFFF;
     margin: 0;
     padding: 0;
-    padding-top: 10px;
+    padding-top: 7px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
     .profile__description  {
-        font-weight: 400;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
-        padding-top: 7px;
     }
   }

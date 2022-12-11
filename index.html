@@ -13,124 +13,170 @@
     <header class="header">
       <img
         class="header__logo"
-        src="images/logo_mesto.png"
+        src="images/logo_mesto.svg"
         alt="Логотип сайта"
       />
     </header>
-    <section class="profile">
-      <div class="profile__first-column">
-        <img
-          class="profile__avatar"
-          src="images/avatar.png"
-          alt="Фото профиля"
-        />
-        <div class="profile__info">
-          <div class="profile__name-and-edit">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button"></button>
+    <main>
+      <section class="profile">
+        <div class="profile__avatar-and-info">
+          <img
+            class="profile__avatar"
+            src="images/avatar.png"
+            alt="Фото профиля"
+          />
+          <div class="profile__info">
+            <div class="profile__name-and-edit">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="profile edit"
+              ></button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
           </div>
-          <p class="profile__description">Исследователь океана</p>
         </div>
-      </div>
-      <div class="profile__second-column">
-        <button class="profile__add-button"></button>
-      </div>
-    </section>
-    <section class="elements">
-      <div class="element">
-        <img
-          class="element__image"
-          src="images/places/karachaevsk.jpg"
-          alt="Карачаевск"
-        />
-        <div class="element__description">
-          <h2 class="element__name">Карачаевск</h2>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img
-          class="element__image"
-          src="images/places/barnaul.jpg"
-          alt="Барнаул"
-        />
-        <div class="element__description">
-          <h2 class="element__name">Барнаул</h2>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img
-          class="element__image"
-          src="images/places/aktash.jpg"
-          alt="Акташ"
-        />
-        <div class="element__description">
-          <h2 class="element__name">Акташ</h2>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="images/places/gagra.jpg" alt="Гагра" />
-        <div class="element__description">
-          <h2 class="element__name">Гагра</h2>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img
-          class="element__image"
-          src="images/places/katun.jpg"
-          alt="Катунь"
-        />
-        <div class="element__description">
-          <h2 class="element__name">Катунь</h2>
-          <button class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img
-          class="element__image"
-          src="images/places/moscow.jpg"
-          alt="Москва"
-        />
-        <div class="element__description">
-          <h2 class="element__name">Москва - столица России</h2>
+        <button
+          type="button"
+          class="profile__add-button"
+          aria-label="add profile info"
+        ></button>
+      </section>
+      <section class="elements">
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/karachaevsk.jpg"
+            alt="Карачаевск"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Карачаевск</h2>
+            <button
+              type="submit"
+              class="element__like-button"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/barnaul.jpg"
+            alt="Барнаул"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Барнаул</h2>
+            <button
+              type="submit"
+              class="element__like-button"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/aktash.jpg"
+            alt="Акташ"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Акташ</h2>
+            <button
+              type="submit"
+              class="element__like-button"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/gagra.jpg"
+            alt="Гагра"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Гагра</h2>
+            <button
+              type="submit"
+              class="element__like-button"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/katun.jpg"
+            alt="Катунь"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Катунь</h2>
+            <button
+              type="submit"
+              class="element__like-button"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            class="element__image"
+            src="images/places/moscow.jpg"
+            alt="Москва"
+          />
+          <div class="element__description">
+            <h2 class="element__name">Москва - столица России</h2>
+            <button
+              type="submit"
+              class="element__like-button element__like-button_active"
+              aria-label="like"
+            ></button>
+          </div>
+        </article>
+      </section>
+      <section class="popup">
+        <div class="popup__container">
           <button
-            class="element__like-button element__like-button_active"
+            type="button"
+            class="popup__close-button"
+            aria-label="close popup"
           ></button>
+          <form class="popup__form" name="profileEditForm">
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <fieldset class="popup__field">
+              <input
+                class="popup__input"
+                type="text"
+                placeholder="Имя"
+                id="name"
+                minlength="2"
+                maxlength="30"
+                name="profile_name"
+                required
+              />
+              <input
+                class="popup__input"
+                type="text"
+                placeholder="Описание"
+                id="job"
+                minlength="4"
+                maxlength="30"
+                name="profile_description"
+                required
+              />
+            </fieldset>
+            <button
+              type="submit"
+              class="popup__submit-button"
+              aria-label="save profile info"
+            >
+              Сохранить
+            </button>
+          </form>
         </div>
-      </div>
-    </section>
-    <section class="popup">
-      <div class="popup__container">
-        <button class="popup__close-button"></button>
-        <div class="popup__form">
-          <h3 class="popup__title">Редактировать профиль</h3>
-          <fieldset class="popup__field">
-            <input
-              class="popup__input"
-              type="text"
-              placeholder="Имя"
-              id="name"
-              minlength="2"
-              maxlength="30"
-              required
-            />
-            <input
-              class="popup__input"
-              type="text"
-              placeholder="Описание"
-              id="job"
-              minlength="4"
-              maxlength="30"
-              required
-            />
-          </fieldset>
-          <button class="popup__submit-button">Сохранить</button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>

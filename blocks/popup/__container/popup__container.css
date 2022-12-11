@@ -1,9 +1,14 @@
 .popup__container {
   align-items: center;
   display: flex;
-  margin: 195px auto auto auto;
   background: none;
   flex-direction: column;
   position: relative;
   width: 430px;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__container {
+    width: 282px;
+  }
 }

@@ -7,3 +7,9 @@
   flex-direction: column;
   border: none;
 }
+
+@media screen and (max-width: 767px) {
+  .popup__field {
+    width: 238px;
+  }
+}

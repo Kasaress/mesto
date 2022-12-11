@@ -1,9 +1,9 @@
 .profile {
   max-width: 880px;
-  min-height: 120px;
   display: flex;
   justify-content: space-between;
   color: white;
+  margin: auto;
 }
 
 @media screen and (max-width: 999px) {
@@ -15,7 +15,7 @@
 @media screen and (max-width: 767px) {
   .profile  {
     max-width: 282px;
-    margin: 0 auto 30px;
+    margin: 0 auto 35px;
     flex-direction: column;
   }
 }

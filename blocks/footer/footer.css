@@ -1,5 +1,5 @@
 .footer {
-  margin: 67px auto 60px;
+  margin: 50px auto 60px;
   display: flex;
   max-width: 880px;
 }
@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 767px) {
   .footer {
-    margin: 48px auto 36px;
     max-width: 282px;
+    margin-top: 35px;
   }
 }

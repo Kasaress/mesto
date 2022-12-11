@@ -6,9 +6,13 @@
   margin-left: 18px;
   margin-bottom: 9px;
   align-self: flex-end;
-  background-image: url(../../../images/slash.png);
+  background-image: url(../../../images/slash.svg);
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
 }
 
 .profile__edit-button:hover {

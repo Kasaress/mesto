@@ -1,12 +1,12 @@
-.profile__first-column {
+.profile__avatar-and-info {
   display: flex;
   justify-content: flex-start;
 }
 
 @media screen and (max-width: 767px) {
-  .profile__first-column  {
+  .profile__avatar-and-info  {
     max-width: 282px;
-    margin: 0 auto 36px;
+    /* margin: 0 auto 36px; */
     flex-direction: column;
   }
 }

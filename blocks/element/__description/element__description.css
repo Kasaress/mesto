@@ -2,5 +2,7 @@
     background-color: white;
     display: flex;
     justify-content: space-between;
-    height: 79px;
+    /* height: 79px; */
+    box-sizing: border-box;
+    padding: 26px 0px 24px 23px;
 }
