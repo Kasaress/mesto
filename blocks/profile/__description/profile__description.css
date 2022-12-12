@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     padding-top: 7px;
+    width: 336px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -13,6 +14,7 @@
 
 @media screen and (max-width: 767px) {
     .profile__description  {
+        width: 282px;
         font-size: 14px;
         line-height: 17px;
         text-align: center;

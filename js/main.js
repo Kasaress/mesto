@@ -25,7 +25,6 @@ function handleCloseButton () {
 function handleEditProfileFormSubmit (event) {
     event.preventDefault();
     savePopup(popUp);
-    console.log('submit');
 };
 editButton.addEventListener('click', handleEditButton);
 closeButton.addEventListener('click', handleCloseButton);
