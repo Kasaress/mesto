@@ -46,6 +46,11 @@
       <section class="elements">
         <template id="elements">
           <article class="element">
+            <button
+                type="button"
+                class="element__delete-button"
+                aria-label="delete"
+              ></button>
             <img
               class="element__image"
               
@@ -62,7 +67,7 @@
           </article>
         </template>
       </section> 
-      <section class="popup">
+      <section class="popup" id="profilePopup">
         <div class="popup__container">
           <button
             type="button"
@@ -97,6 +102,48 @@
               type="submit"
               class="popup__submit-button"
               aria-label="save profile info"
+            >
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="popup" id="cardPopup">
+        <div class="popup__container">
+          <button
+            type="button"
+            class="popup__close-button"
+            aria-label="close popup"
+            id="closeCardButton"
+          ></button>
+          <form class="popup__form" name="addCardForm" id="addCardForm">
+            <h3 class="popup__title">Новое место</h3>
+            <fieldset class="popup__field">
+              <input
+                class="popup__input"
+                type="text"
+                placeholder="Название"
+                id="cardPopupInput"
+                minlength="2"
+                maxlength="30"
+                name="card_name"
+                required
+              />
+              <input
+                class="popup__input"
+                type="text"
+                placeholder="Ссылка на картинку"
+                id="cardPopupInput"
+                minlength="4"
+                maxlength="100"
+                name="card_link"
+                required
+              />
+            </fieldset>
+            <button
+              type="submit"
+              class="popup__submit-button"
+              aria-label="save new card"
             >
               Сохранить
             </button>

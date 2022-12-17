@@ -1,5 +1,5 @@
 // edit profile info
-const popUp = document.querySelector('.popup');
+const popUp = document.querySelector('#profilePopup');
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
 const editProfileForm = document.querySelector('.popup__form');
@@ -72,11 +72,54 @@ initialCards.forEach(addElement);
 
 // like card
 const likeButtons = document.querySelectorAll('.element__like-button');
-function likeCard(evt) {
+function handleLikeButton(evt) {
     evt.target.classList.toggle('element__like-button_active');
 };
+likeButtons.forEach((button) => {
+    button.addEventListener('click', (event) => handleLikeButton(event));
+ }); 
 
-for (let i=0; i < likeButtons.length; i++) {
-    console.log(likeButtons[i]);
-    likeButtons[i].addEventListener('click', (event) => likeCard(event));
-}
+// del card
+const delButtons = document.querySelectorAll('.element__delete-button');
+function handleDelButton(evt) {
+    const cardToDel = evt.target.closest('.element');
+    console.log('кто-то хочет удалить')
+    console.log(cardToDel);
+    cardToDel.remove();
+};
+delButtons.forEach((button) => {
+    button.addEventListener('click', (event) => handleDelButton(event));
+ });
+
+// add new card
+const addButton = document.querySelector('.profile__add-button');
+const closeCardButton = document.querySelector('#closeCardButton');
+const cardPopup= document.querySelector('#cardPopup');
+const addNewCardForm = document.querySelector('#addCardForm');
+let cardFormElements = document.querySelectorAll('#cardPopupInput');
+
+function handleAddButton () {
+    openPopup(cardPopup);
+};
+function handleCloseCardButton () {
+    closePopup(cardPopup);
+};
+function saveCardPopup() {
+    console.log('пытаются сохранить')
+    console.log(cardFormElements)
+    newElement = {
+        name: cardFormElements[0].value,
+        link: cardFormElements[1].value
+      },
+    addElement(newElement);
+    console.log(newElement);
+    closePopup(cardPopup);
+};
+
+function handleAddCardFormSubmit (event) {
+    event.preventDefault();
+    saveCardPopup();
+};
+addButton.addEventListener('click', handleAddButton);
+closeCardButton.addEventListener('click', handleCloseCardButton);
+addNewCardForm.addEventListener('submit', (event) => handleAddCardFormSubmit(event));
