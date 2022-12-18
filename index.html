@@ -51,11 +51,13 @@
                 class="element__delete-button"
                 aria-label="delete"
               ></button>
-            <img
+              <button class="element__image-button">
+              <img
               class="element__image"
               
               alt="Изображение места"
             />
+          </button>
             <div class="element__description">
               <h2 class="element__name"></h2>
               <button
@@ -148,6 +150,18 @@
               Сохранить
             </button>
           </form>
+        </div>
+      </section>
+      <section class="popup" id="imagePopup">
+        <div class="popup__image-container">
+          <button
+            type="button"
+            class="popup__close-button"
+            aria-label="close popup"
+            id="closeImageButton"
+          ></button>
+            <img class="popup__image" src="">
+          <p class="popup__image-description"></p>
         </div>
       </section>
     </main>

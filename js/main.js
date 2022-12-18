@@ -1,33 +1,36 @@
-// edit profile info
-const popUp = document.querySelector('#profilePopup');
-const editButton = document.querySelector('.profile__edit-button');
+// universal
 const closeButton = document.querySelector('.popup__close-button');
-const editProfileForm = document.querySelector('.popup__form');
-let formElements = document.querySelectorAll('.popup__input');
 function openPopup(popup) {
     popup.classList.add('popup_opened');
 };
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
 };
+
+// edit profile info
+const profilePopup = document.querySelector('#profilePopup');
+const editProfileButton = document.querySelector('.profile__edit-button');
+const editProfileForm = document.querySelector('.popup__form');
+let profileFormElements = document.querySelectorAll('.popup__input');
+
 function savePopup(popup) {
-    document.querySelector('.profile__name').textContent = formElements[0].value;
-    document.querySelector('.profile__description').textContent = formElements[1].value;
+    document.querySelector('.profile__name').textContent = profileFormElements[0].value;
+    document.querySelector('.profile__description').textContent = profileFormElements[1].value;
     closePopup(popup);
 };
 function handleEditButton () {
-    openPopup(popUp);
-    formElements[0].value = document.querySelector('.profile__name').textContent;
-    formElements[1].value = document.querySelector('.profile__description').textContent;
+    openPopup(profilePopup);
+    profileFormElements[0].value = document.querySelector('.profile__name').textContent;
+    profileFormElements[1].value = document.querySelector('.profile__description').textContent;
 };
 function handleCloseButton () {
-    closePopup(popUp);
+    closePopup(profilePopup);
 };
 function handleEditProfileFormSubmit (event) {
     event.preventDefault();
-    savePopup(popUp);
+    savePopup(profilePopup);
 };
-editButton.addEventListener('click', handleEditButton);
+editProfileButton.addEventListener('click', handleEditButton);
 closeButton.addEventListener('click', handleCloseButton);
 editProfileForm.addEventListener('submit', (event) => handleEditProfileFormSubmit(event));
 
@@ -61,36 +64,39 @@ const initialCards = [
 
 const elementsTemplate = document.querySelector('#elements').content;
 const elements = document.querySelector('.elements');
-
+const imagePopup = document.querySelector('#imagePopup');
+function handleLikeButton(evt) {
+    evt.target.classList.toggle('element__like-button_active');
+};
+function handleDelButton(evt) {
+    const cardToDel = evt.target.closest('.element');
+    cardToDel.remove();
+};
+function handlePopupImageCloseButton () {
+    closePopup(imagePopup);
+};
+function handleImageButton(evt) {
+    const imageToOpen = evt.target.closest('.element__image');
+    let popupImage = imagePopup.querySelector('.popup__image');
+    popupImage.src = imageToOpen.src;
+    openPopup(imagePopup);
+    let popupImageClose = imagePopup.querySelector('.popup__close-button');
+    popupImageClose.addEventListener('click', (event) => handlePopupImageCloseButton(event))
+};
 function addElement(el) {
     const element = elementsTemplate.querySelector('.element').cloneNode(true);
     element.querySelector('.element__image').src = el.link;
     element.querySelector('.element__name').textContent = el.name;
     elements.append(element);
+    let likeButton = element.querySelector('.element__like-button');
+    let delButton = element.querySelector('.element__delete-button');
+    let imageButton = element.querySelector('.element__image-button');
+    likeButton.addEventListener('click', (event) => handleLikeButton(event));
+    delButton.addEventListener('click', (event) => handleDelButton(event));
+    imageButton.addEventListener('click', (event) => handleImageButton(event));
 };
+
 initialCards.forEach(addElement);
-
-// like card
-const likeButtons = document.querySelectorAll('.element__like-button');
-function handleLikeButton(evt) {
-    evt.target.classList.toggle('element__like-button_active');
-};
-likeButtons.forEach((button) => {
-    button.addEventListener('click', (event) => handleLikeButton(event));
- }); 
-
-// del card
-const delButtons = document.querySelectorAll('.element__delete-button');
-function handleDelButton(evt) {
-    const cardToDel = evt.target.closest('.element');
-    console.log('кто-то хочет удалить')
-    console.log(cardToDel);
-    cardToDel.remove();
-};
-delButtons.forEach((button) => {
-    button.addEventListener('click', (event) => handleDelButton(event));
- });
-
 // add new card
 const addButton = document.querySelector('.profile__add-button');
 const closeCardButton = document.querySelector('#closeCardButton');
@@ -123,3 +129,6 @@ function handleAddCardFormSubmit (event) {
 addButton.addEventListener('click', handleAddButton);
 closeCardButton.addEventListener('click', handleCloseCardButton);
 addNewCardForm.addEventListener('submit', (event) => handleAddCardFormSubmit(event));
+
+
+
