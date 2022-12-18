@@ -47,17 +47,13 @@
         <template id="elements">
           <article class="element">
             <button
-                type="button"
-                class="element__delete-button"
-                aria-label="delete"
-              ></button>
-              <button class="element__image-button">
-              <img
-              class="element__image"
-              
-              alt="Изображение места"
-            />
-          </button>
+              type="button"
+              class="element__delete-button"
+              aria-label="delete"
+            ></button>
+            <button class="element__image-button">
+              <img class="element__image" alt="Изображение места" />
+            </button>
             <div class="element__description">
               <h2 class="element__name"></h2>
               <button
@@ -68,104 +64,107 @@
             </div>
           </article>
         </template>
-      </section> 
-      <section class="popup" id="profilePopup">
-        <div class="popup__container">
-          <button
-            type="button"
-            class="popup__close-button"
-            aria-label="close popup"
-          ></button>
-          <form class="popup__form" name="profileEditForm">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <fieldset class="popup__field">
-              <input
-                class="popup__input"
-                type="text"
-                placeholder="Имя"
-                id="name"
-                minlength="2"
-                maxlength="30"
-                name="profile_name"
-                required
-              />
-              <input
-                class="popup__input"
-                type="text"
-                placeholder="Описание"
-                id="job"
-                minlength="4"
-                maxlength="100"
-                name="profile_description"
-                required
-              />
-            </fieldset>
-            <button
-              type="submit"
-              class="popup__submit-button"
-              aria-label="save profile info"
-            >
-              Сохранить
-            </button>
-          </form>
-        </div>
-      </section>
-      <section class="popup" id="cardPopup">
-        <div class="popup__container">
-          <button
-            type="button"
-            class="popup__close-button"
-            aria-label="close popup"
-            id="closeCardButton"
-          ></button>
-          <form class="popup__form" name="addCardForm" id="addCardForm">
-            <h3 class="popup__title">Новое место</h3>
-            <fieldset class="popup__field">
-              <input
-                class="popup__input cardPopupInput"
-                type="text"
-                placeholder="Название"
-                minlength="2"
-                maxlength="30"
-                name="card_name"
-                required
-              />
-              <input
-                class="popup__input cardPopupInput"
-                type="text"
-                placeholder="Ссылка на картинку"
-                minlength="4"
-                maxlength="100"
-                name="card_link"
-                required
-              />
-            </fieldset>
-            <button
-              type="submit"
-              class="popup__submit-button"
-              aria-label="save new card"
-            >
-              Сохранить
-            </button>
-          </form>
-        </div>
-      </section>
-      <section class="popup" id="imagePopup">
-        <div class="popup__image-container">
-          <button
-            type="button"
-            class="popup__close-button"
-            aria-label="close popup"
-            id="closeImageButton"
-          ></button>
-            <img class="popup__image">
-          <p class="popup__image-description"></p>
-        </div>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
+    <div class="popup" id="profilePopup">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="close popup"
+        ></button>
+        <form class="popup__form" name="profileEditForm">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <fieldset class="popup__field">
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Имя"
+              id="profileInputName"
+              minlength="2"
+              maxlength="30"
+              name="profile_name"
+              required
+            />
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Описание"
+              id="profileInputJob"
+              minlength="4"
+              maxlength="100"
+              name="profile_description"
+              required
+            />
+          </fieldset>
+          <button
+            type="submit"
+            class="popup__submit-button"
+            aria-label="save profile info"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="cardPopup">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="close popup"
+          id="closeCardButton"
+        ></button>
+        <form class="popup__form" name="addCardForm" id="addCardForm">
+          <h3 class="popup__title">Новое место</h3>
+          <fieldset class="popup__field">
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              name="card_name"
+              id="cardInputName"
+              required
+            />
+            <input
+              class="popup__input"
+              type="text"
+              placeholder="Ссылка на картинку"
+              minlength="4"
+              maxlength="100"
+              name="card_link"
+              id="cardInputLink"
+              required
+            />
+          </fieldset>
+          <button
+            type="submit"
+            class="popup__submit-button"
+            aria-label="save new card"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_dark" id="imagePopup">
+      <div class="popup__image-container">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="close popup"
+          id="closeImageButton"
+        ></button>
+        <img class="popup__image" />
+        <p class="popup__image-description"></p>
+      </div>
+    </div>
+    <script src="js/cards_data.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
