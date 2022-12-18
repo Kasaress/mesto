@@ -103,7 +103,7 @@ const addButton = document.querySelector('.profile__add-button');
 const closeCardButton = document.querySelector('#closeCardButton');
 const cardPopup= document.querySelector('#cardPopup');
 const addNewCardForm = document.querySelector('#addCardForm');
-let cardFormElements = document.querySelectorAll('#cardPopupInput');
+let cardFormElements = document.querySelectorAll('.cardPopupInput');
 
 function handleAddButton () {
     openPopup(cardPopup);

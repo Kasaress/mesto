@@ -5,7 +5,6 @@
   flex-direction: column;
   position: relative;
   width: 430px;
-  border: 1px solid blue
 }
 
 @media screen and (max-width: 767px) {
