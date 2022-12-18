@@ -9,6 +9,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    display: none;
-    border: 1px solid blue
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
 }

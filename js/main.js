@@ -34,7 +34,7 @@ editProfileButton.addEventListener('click', handleEditButton);
 closeButton.addEventListener('click', handleCloseButton);
 editProfileForm.addEventListener('submit', (event) => handleEditProfileFormSubmit(event));
 
-// add places cards
+// places cards
 const initialCards = [
     {
       name: 'Архыз',
@@ -78,7 +78,9 @@ function handlePopupImageCloseButton () {
 function handleImageButton(evt) {
     const imageToOpen = evt.target.closest('.element__image');
     let popupImage = imagePopup.querySelector('.popup__image');
+    let popupImageDescription = imagePopup.querySelector('.popup__image-description');
     popupImage.src = imageToOpen.src;
+    popupImageDescription.textContent = evt.target.closest('.element').querySelector('.element__description').textContent
     openPopup(imagePopup);
     let popupImageClose = imagePopup.querySelector('.popup__close-button');
     popupImageClose.addEventListener('click', (event) => handlePopupImageCloseButton(event))
@@ -97,7 +99,6 @@ function addElement(el) {
 };
 
 initialCards.forEach(addElement);
-// add new card
 const addButton = document.querySelector('.profile__add-button');
 const closeCardButton = document.querySelector('#closeCardButton');
 const cardPopup= document.querySelector('#cardPopup');
@@ -109,17 +110,27 @@ function handleAddButton () {
 };
 function handleCloseCardButton () {
     closePopup(cardPopup);
+    cardFormElements[0].value = ''
+    cardFormElements[1].value = ''
+
 };
+function validateImageURL(url) {
+  if (url.startsWith('http') && (url.endsWith('jpg') || url.endsWith('png'))) {
+    return url 
+    } else {
+      return false
+    }
+  };
+
 function saveCardPopup() {
-    console.log('пытаются сохранить')
-    console.log(cardFormElements)
     newElement = {
         name: cardFormElements[0].value,
-        link: cardFormElements[1].value
+        link: validateImageURL(cardFormElements[1].value) || 'images/question.jpg'
       },
     addElement(newElement);
-    console.log(newElement);
     closePopup(cardPopup);
+    cardFormElements[0].value = ''
+    cardFormElements[1].value = ''
 };
 
 function handleAddCardFormSubmit (event) {
