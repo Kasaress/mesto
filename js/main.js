@@ -57,8 +57,8 @@ function saveNewCard() {
 };
 function handleProfileEditButton () {
     openPopup(profilePopup);
-    profileInputName.value = document.querySelector('.profile__name').textContent;
-    profileInputJob.value = document.querySelector('.profile__description').textContent;
+    profileInputName.value = profileName.textContent;
+    profileInputJob.value = profileDescription.textContent;
 };
 function handleProfilePopupCloseButton () {
     closePopup(profilePopup);
