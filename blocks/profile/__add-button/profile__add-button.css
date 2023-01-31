@@ -23,6 +23,7 @@
     width: 100%;
     height: 35px;
     background-size: 16px;
+    margin-left: 20px;
   }
 }
 
@@ -30,5 +31,6 @@
   .profile__add-button {
     width: 282px;
     height: 50px;
+    margin-left: 0;
   }
 }
