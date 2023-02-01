@@ -76,7 +76,7 @@
           class="popup__close-button"
           aria-label="close popup"
         ></button>
-        <form class="popup__form" name="profileEditForm">
+        <form class="popup__form" name="profileEditForm" novalidate>
           <h3 class="popup__title">Редактировать профиль</h3>
           <fieldset class="popup__field">
             <input
@@ -85,20 +85,22 @@
               placeholder="Имя"
               id="profileInputName"
               minlength="2"
-              maxlength="30"
+              maxlength="40"
               name="profile_name"
               required
             />
+            <span class='profileInputName-error popup__input-error'></span>
             <input
               class="popup__input"
               type="text"
               placeholder="Описание"
               id="profileInputJob"
-              minlength="4"
-              maxlength="100"
+              minlength="2"
+              maxlength="200"
               name="profile_description"
               required
             />
+            <span class='profileInputJob-error popup__input-error'></span>
           </fieldset>
           <button
             type="submit"
@@ -118,7 +120,7 @@
           aria-label="close popup"
           id="closeCardButton"
         ></button>
-        <form class="popup__form" name="addCardForm" id="addCardForm">
+        <form class="popup__form" name="addCardForm" id="addCardForm" novalidate>
           <h3 class="popup__title">Новое место</h3>
           <fieldset class="popup__field">
             <input
@@ -131,16 +133,16 @@
               id="cardInputName"
               required
             />
+            <span class='cardInputName-error popup__input-error'></span>
             <input
               class="popup__input"
-              type="text"
+              type="url"
               placeholder="Ссылка на картинку"
-              minlength="4"
-              maxlength="100"
               name="card_link"
               id="cardInputLink"
               required
             />
+            <span class='cardInputLink-error popup__input-error'></span>
           </fieldset>
           <button
             type="submit"
@@ -165,6 +167,7 @@
       </div>
     </div>
     <script src="js/cards_data.js"></script>
+    <script src="js/validate.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

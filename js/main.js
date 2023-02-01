@@ -37,17 +37,10 @@ function createElement(el) {
   imageButton.addEventListener('click', () => handleImageButton(el.name, el.link));
   return element;
 };
-function validateImageURL(url) {
-  if (url.startsWith('http') && (url.endsWith('jpg') || url.endsWith('png'))) {
-    return url;
-    } else {
-      return false;
-    }
-};
 function saveNewCard() {
   newElementData = {
     name: cardInputName.value,
-    link: validateImageURL(cardInputLink.value) || 'images/question.jpg'
+    link: cardInputLink.value
   };
   elementToAdd = createElement(newElementData);
   elements.prepend(elementToAdd);
@@ -110,3 +103,14 @@ initialCards.map(function (item) {
   elements.prepend(createElement(item));
 });
   
+
+// функция для навешивания слушателя на все инпуты
+function addInputListener (el) {
+  el.addEventListener('input', function (evt) {
+    // console.log(evt.target.validity)
+  });
+}
+// выбираем все инпуты
+const popupInput = document.querySelectorAll('.popup__input');
+// навешиваем слушателя на все инпуты
+popupInput.forEach(addInputListener);

@@ -14,10 +14,21 @@
   opacity: 1;
   transition: opacity .5s ease-in-out;
 }
-
-.popup__submit-button:hover {
+.popup__submit-button:disabled {
+  cursor: default;
+}
+.popup__submit-button:not([disabled]):hover {
   opacity: .8;
 }
+
+.button_inactive {
+  opacity: .2;
+  background-color: white;
+  color: #000000;
+  border: 1px solid #000000;  
+}
+
+
 
 @media screen and (max-width: 767px) {
   .popup__submit-button {

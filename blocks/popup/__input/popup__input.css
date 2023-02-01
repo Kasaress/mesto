@@ -7,7 +7,13 @@
   line-height: 17px;
   padding-bottom: 13px;
   padding-top: 30px;
+  outline: none;
 }
+
+.popup__input-type_error {
+  border-bottom: 1px solid #FF0000;
+  
+}  
 
 @media screen and (max-width: 767px) {
   .popup__input {

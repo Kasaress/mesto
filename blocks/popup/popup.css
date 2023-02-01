@@ -14,3 +14,15 @@
     opacity: 0;
     transition: visibility 0.5s, opacity 0.5s;
 }
+.popup__input_type_error {
+}
+
+.popup__input-error_active {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    padding-top: 5px;
+}
