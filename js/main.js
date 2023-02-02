@@ -18,13 +18,28 @@ const cardPopupCloseButton = document.querySelector('#closeCardButton');
 const cardAddForm = document.querySelector('#addCardForm');
 const cardInputName = document.querySelector('#cardInputName');
 const cardInputLink = document.querySelector('#cardInputLink');
+const popupList = document.querySelectorAll('.popup');
+const popupInput = document.querySelectorAll('.popup__input');
+const overlayClickHandler = (evt) => {
+  if (evt.target.classList.contains('popup')) {
+      closePopup(evt.target);
+  }
+}
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEsc);
 };
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEsc);
 };
+function closeByEsc(evt) {
+  if (evt.key === "Escape") {
+      const popupElement = document.querySelector('.popup_opened');
+      closePopup(popupElement);
+  }
+}
 function createElement(el) {
   const element = elementsTemplate.querySelector('.element').cloneNode(true);
   const likeButton = element.querySelector('.element__like-button');
@@ -90,6 +105,10 @@ function handleCardAddFormSubmit (event) {
   event.preventDefault();
   saveNewCard();
 };
+function addInputListener (el) {
+  el.addEventListener('input', function (evt) {
+  });
+}
 
 profilePopupEditButton.addEventListener('click', handleProfileEditButton);
 profilePopupCloseButton.addEventListener('click', handleProfilePopupCloseButton);
@@ -99,18 +118,10 @@ cardPopupCloseButton.addEventListener('click', handleCardCloseButton);
 cardAddForm.addEventListener('submit', (event) => handleCardAddFormSubmit(event));
 imagePopupCloseButton.addEventListener('click', (event) => handlePopupImageCloseButton(event));
 
+popupInput.forEach(addInputListener);
+popupList.forEach((popupElement) => {
+  popupElement.addEventListener('mousedown', overlayClickHandler);
+})
 initialCards.map(function (item) {
   elements.prepend(createElement(item));
 });
-  
-
-// функция для навешивания слушателя на все инпуты
-function addInputListener (el) {
-  el.addEventListener('input', function (evt) {
-    // console.log(evt.target.validity)
-  });
-}
-// выбираем все инпуты
-const popupInput = document.querySelectorAll('.popup__input');
-// навешиваем слушателя на все инпуты
-popupInput.forEach(addInputListener);

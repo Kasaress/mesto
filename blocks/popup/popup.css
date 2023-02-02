@@ -15,22 +15,5 @@
     transition: visibility 0.5s, opacity 0.5s;
 }
 
-.popup__input-type_error {
-    border-bottom: 1px solid #FF0000 !important;
-}
-
-.popup__input-error {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #FF0000;
-    min-height: 30px;
-    visibility: hidden;
-}
 
 
-.popup__input-error_active {
-    visibility: visible;
-}
