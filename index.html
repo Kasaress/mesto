@@ -89,7 +89,7 @@
               name="profile_name"
               required
             />
-            <span class='popup__input-error profileInputName-error'></span>
+            <span class="popup__input-error profileInputName-error"></span>
             <input
               class="popup__input"
               type="text"
@@ -100,7 +100,7 @@
               name="profile_description"
               required
             />
-            <span class='popup__input-error profileInputJob-error'></span>
+            <span class="popup__input-error profileInputJob-error"></span>
           </fieldset>
           <button
             type="submit"
@@ -120,7 +120,12 @@
           aria-label="close popup"
           id="closeCardButton"
         ></button>
-        <form class="popup__form" name="addCardForm" id="addCardForm" novalidate>
+        <form
+          class="popup__form"
+          name="addCardForm"
+          id="addCardForm"
+          novalidate
+        >
           <h3 class="popup__title">Новое место</h3>
           <fieldset class="popup__field">
             <input
@@ -133,7 +138,7 @@
               id="cardInputName"
               required
             />
-            <span class='cardInputName-error popup__input-error'></span>
+            <span class="cardInputName-error popup__input-error"></span>
             <input
               class="popup__input"
               type="url"
@@ -142,12 +147,13 @@
               id="cardInputLink"
               required
             />
-            <span class='cardInputLink-error popup__input-error'></span>
+            <span class="cardInputLink-error popup__input-error"></span>
           </fieldset>
           <button
             type="submit"
             class="popup__submit-button"
             aria-label="save new card"
+            id="cardSubmitButton"
           >
             Сохранить
           </button>
