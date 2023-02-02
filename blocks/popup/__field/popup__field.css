@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   border: none;
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {

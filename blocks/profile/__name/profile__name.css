@@ -3,7 +3,7 @@
   font-size: 42px;
   line-height: 48px;
   color: #FFFFFF;
-  width: 294px;
+  max-width: 294px;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
