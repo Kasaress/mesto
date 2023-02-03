@@ -24,6 +24,7 @@ const cardInputName = document.querySelector("#cardInputName");
 const cardInputLink = document.querySelector("#cardInputLink");
 const popupList = document.querySelectorAll(".popup");
 const popupInput = document.querySelectorAll(".popup__input");
+const buttonElement = document.querySelector("#cardSubmitButton");
 const hadnleOverlayClick = (evt) => {
   if (evt.target === evt.currentTarget) {
     closePopup(evt.target);
@@ -33,12 +34,6 @@ const hadnleOverlayClick = (evt) => {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeByEsc);
-  if (popup == cardPopup) {
-    cardAddForm.reset();
-    const buttonElement = document.querySelector("#cardSubmitButton");
-    buttonElement.classList.add("button_inactive");
-    buttonElement.disabled = true;
-  }
 }
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
@@ -53,13 +48,13 @@ function closeByEsc(evt) {
 function createElement(card) {
   const element = elementsTemplate.cloneNode(true);
   const buttonToLike = element.querySelector(".element__like-button");
-  const ButtonToDelete = element.querySelector(".element__delete-button");
+  const buttonToDelete = element.querySelector(".element__delete-button");
   const imageButton = element.querySelector(".element__image-button");
   element.querySelector(".element__image").src = card.link;
   element.querySelector(".element__image").alt = card.name;
   element.querySelector(".element__name").textContent = card.name;
   buttonToLike.addEventListener("click", (event) => handleLikeButton(event));
-  ButtonToDelete.addEventListener("click", (event) => handleDelButton(event));
+  buttonToDelete.addEventListener("click", (event) => handleDelButton(event));
   imageButton.addEventListener("click", () =>
     handleImageButton(card.name, card.link)
   );
@@ -107,6 +102,9 @@ function handleImageButton(name, link) {
   openPopup(imagePopup);
 }
 function handleCardAddButton() {
+  cardAddForm.reset();
+  buttonElement.classList.add("button_inactive");
+  buttonElement.disabled = true;
   openPopup(cardPopup);
 }
 function handleCardCloseButton() {
