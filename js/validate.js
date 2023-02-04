@@ -46,10 +46,15 @@ function hasInvalidInput(inputList) {
     return !inputElement.validity.valid;
   });
 }
+
+function deactivateButton(button) {
+  button.classList.add(validationConfig.buttonInactiveClass);
+  button.disabled = true;
+}
+
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(validationConfig.buttonInactiveClass);
-    buttonElement.disabled = true;
+    deactivateButton(buttonElement);
   } else {
     buttonElement.classList.remove(validationConfig.buttonInactiveClass);
     buttonElement.disabled = false;
@@ -64,4 +69,5 @@ function enableValidation(config) {
     setEventListeners(formElement);
   });
 }
+
 enableValidation(validationConfig);

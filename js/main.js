@@ -103,8 +103,7 @@ function handleImageButton(name, link) {
 }
 function handleCardAddButton() {
   cardAddForm.reset();
-  buttonElement.classList.add("button_inactive");
-  buttonElement.disabled = true;
+  deactivateButton(buttonElement);
   openPopup(cardPopup);
 }
 function handleCardCloseButton() {
