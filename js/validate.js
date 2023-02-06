@@ -47,7 +47,7 @@ function hasInvalidInput(inputList) {
   });
 }
 
-function deactivateButton(button) {
+export function deactivateButton(button) {
   button.classList.add(validationConfig.buttonInactiveClass);
   button.disabled = true;
 }
