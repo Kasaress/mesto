@@ -1,69 +1,6 @@
 import { initialCards } from "./cards_data.js";
 import { deactivateButton } from "./validate.js";
-
-class Card {
-  constructor(cardData, templateSelector) {
-    this.name = cardData.name;
-    this.link = cardData.link;
-    this.templateSelector = templateSelector;
-  }
-  _createTemplate() {
-    const elementTemplate = document
-      .querySelector(this.templateSelector)
-      .content.querySelector(".element");
-    const element = elementTemplate.cloneNode(true);
-    return element;
-  }
-  _handleLikeButton(evt) {
-    evt.target.classList.toggle("element__like-button_active");
-  }
-  _handleDelButton(evt) {
-    const cardToDel = evt.target.closest(".element");
-    cardToDel.remove();
-  }
-  _handleImageButton() {
-    imagePopupImage.src = this.link;
-    imagePopupImage.alt = this.name;
-    imagePopupDescription.textContent = this.name;
-    openPopup(imagePopup);
-  }
-  _addListeners(element) {
-    const buttonToLike = element.querySelector(".element__like-button");
-    const buttonToDelete = element.querySelector(".element__delete-button");
-    const imageButton = element.querySelector(".element__image-button");
-    buttonToLike.addEventListener("click", (event) =>
-      this._handleLikeButton(event)
-    );
-    buttonToDelete.addEventListener("click", (event) =>
-      this._handleDelButton(event)
-    );
-    imageButton.addEventListener("click", () => this._handleImageButton());
-  }
-  _createElement() {
-    const element = this._createTemplate();
-    element.querySelector(".element__name").textContent = this.name;
-    element.querySelector(".element__image").src = this.link;
-    element.querySelector(".element__image").alt = this.name;
-    this._addListeners(element);
-    return element;
-  }
-  getNewCard() {
-    return this._createElement();
-  }
-}
-
-function insertCardToPage(card) {
-  elements.prepend(card);
-}
-function saveNewCard() {
-  const newElementData = {
-    name: cardInputName.value,
-    link: cardInputLink.value,
-  };
-  const newCard = new Card(newElementData, "#elements");
-  insertCardToPage(newCard.getNewCard());
-  closePopup(cardPopup);
-}
+import { Card } from "./Card.js";
 
 const profilePopup = document.querySelector("#profilePopup");
 const profilePopupCloseButton = document.querySelector(".popup__close-button");
@@ -74,9 +11,9 @@ const profileInputJob = document.querySelector("#profileInputJob");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const elements = document.querySelector(".elements");
-const imagePopup = document.querySelector("#imagePopup");
-const imagePopupImage = imagePopup.querySelector(".popup__image");
-const imagePopupDescription = imagePopup.querySelector(
+export const imagePopup = document.querySelector("#imagePopup");
+export const imagePopupImage = imagePopup.querySelector(".popup__image");
+export const imagePopupDescription = imagePopup.querySelector(
   ".popup__image-description"
 );
 const imagePopupCloseButton = imagePopup.querySelector(".popup__close-button");
@@ -95,7 +32,7 @@ const hadnleOverlayClick = (evt) => {
   }
 };
 
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeByEsc);
 }
@@ -168,6 +105,19 @@ imagePopupCloseButton.addEventListener("click", (event) =>
 popupList.forEach((popupElement) => {
   popupElement.addEventListener("mousedown", hadnleOverlayClick);
 });
+
+function insertCardToPage(card) {
+  elements.prepend(card);
+}
+function saveNewCard() {
+  const newElementData = {
+    name: cardInputName.value,
+    link: cardInputLink.value,
+  };
+  const newCard = new Card(newElementData, "#elements");
+  insertCardToPage(newCard.getNewCard());
+  closePopup(cardPopup);
+}
 
 initialCards.map(function (item) {
   const newCard = new Card(item, "#elements");
