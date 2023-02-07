@@ -1,6 +1,6 @@
-import { initialCards } from "./cards_data.js";
-import { deactivateButton } from "./validate.js";
+import { initialCards, validationConfig } from "./data.js";
 import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
 
 const profilePopup = document.querySelector("#profilePopup");
 const profilePopupCloseButton = document.querySelector(".popup__close-button");
@@ -72,7 +72,8 @@ function handlePopupImageCloseButton() {
 
 function handleCardAddButton() {
   cardAddForm.reset();
-  deactivateButton(buttonElement);
+  buttonElement.classList.add("button_inactive");
+  buttonElement.disabled = true;
   openPopup(cardPopup);
 }
 
@@ -123,3 +124,16 @@ initialCards.map(function (item) {
   const newCard = new Card(item, "#elements");
   insertCardToPage(newCard.getNewCard());
 });
+
+
+function enableFormsValidation() {
+  const formList = Array.from(
+    document.querySelectorAll(".popup__form")
+  );
+  formList.forEach((formElement) => {
+    const newFormValidator = new FormValidator(validationConfig, formElement);
+    newFormValidator.enableValidation()
+  });
+}
+
+enableFormsValidation()
