@@ -125,15 +125,12 @@ initialCards.map(function (item) {
   insertCardToPage(newCard.getNewCard());
 });
 
-
 function enableFormsValidation() {
-  const formList = Array.from(
-    document.querySelectorAll(".popup__form")
-  );
+  const formList = Array.from(document.querySelectorAll(".popup__form"));
   formList.forEach((formElement) => {
     const newFormValidator = new FormValidator(validationConfig, formElement);
-    newFormValidator.enableValidation()
+    newFormValidator.enableValidation();
   });
 }
 
-enableFormsValidation()
+enableFormsValidation();
