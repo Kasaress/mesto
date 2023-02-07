@@ -43,12 +43,6 @@ export class FormValidator {
       this._hideInputError(this.formElement, inputElement);
     }
   }
-  _setInputEventListeners(inputElement, inputList, buttonElement) {
-    inputElement.addEventListener("input", () => {
-      this._checkInputValidity(inputElement);
-      this._toggleButtonState(inputList, buttonElement);
-    });
-  }
   _setFormEventListeners() {
     const inputList = Array.from(
       this.formElement.querySelectorAll(this.config.popupInputSelector)
@@ -58,7 +52,8 @@ export class FormValidator {
     );
     inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._setInputEventListeners(inputElement, inputList, buttonElement);
+      this._checkInputValidity(inputElement);
+      this._toggleButtonState(inputList, buttonElement);
       });
     });
   }
