@@ -2,6 +2,8 @@ import { initialCards, validationConfig } from "./data.js";
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 import { Section } from "./Section.js";
+import { Popup } from "./Popup.js";
+import { PopupWithImage } from "./PopupWithImage.js";
 
 const formValidators = {};
 const profilePopup = document.querySelector("#profilePopup");
@@ -12,11 +14,19 @@ const profileInputJob = document.querySelector("#profileInputJob");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const elements = document.querySelector(".elements");
-const imagePopup = document.querySelector("#imagePopup");
-const imagePopupImage = imagePopup.querySelector(".popup__image");
-const imagePopupDescription = imagePopup.querySelector(
-  ".popup__image-description"
-);
+// const imagePopup = document.querySelector("#imagePopup");
+
+// новое для класса
+const popupImageObject = new PopupWithImage("#imagePopup");
+popupImageObject.setEventListeners();
+// const imagePopupImage = popupImageObject.querySelector(".popup__image");
+// const imagePopupDescription = popupImageObject.querySelector(
+//   ".popup__image-description"
+// );
+function openImage ({link, name}) {
+  popupImageObject.open(name, link);
+}
+
 const cardPopup = document.querySelector("#cardPopup");
 const cardAddButton = document.querySelector(".profile__add-button");
 const cardAddForm = document.querySelector("#addCardForm");
@@ -24,22 +34,22 @@ const cardInputName = document.querySelector("#cardInputName");
 const cardInputLink = document.querySelector("#cardInputLink");
 const popupList = document.querySelectorAll(".popup");
 
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closeByEsc);
-}
+// function openPopup(popup) {
+//   popup.classList.add("popup_opened");
+//   document.addEventListener("keydown", closeByEsc);
+// }
 
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closeByEsc);
-}
+// function closePopup(popup) {
+//   popup.classList.remove("popup_opened");
+//   document.removeEventListener("keydown", closeByEsc);
+// }
 
-function closeByEsc(evt) {
-  if (evt.key === "Escape") {
-    const popupElement = document.querySelector(".popup_opened");
-    closePopup(popupElement);
-  }
-}
+// function closeByEsc(evt) {
+//   if (evt.key === "Escape") {
+//     const popupElement = document.querySelector(".popup_opened");
+//     closePopup(popupElement);
+//   }
+// }
 
 function handleProfileEditButton() {
   formValidators["profileEditForm"].resetValidation();
@@ -70,7 +80,7 @@ function insertCardToPage(card) {
 }
 
 function createCard(item) {
-  const newCard = new Card(item, "#elements", handleCardClick);
+  const newCard = new Card(item, "#elements", handleCardClick, openImage);
   return newCard.getNewCard();
 }
 
@@ -94,22 +104,22 @@ function enableFormsValidation(config) {
 }
 
 function handleCardClick(name, link) {
-  imagePopupImage.src = this.link;
-  imagePopupImage.alt = this.name;
-  imagePopupDescription.textContent = this.name;
-  openPopup(imagePopup);
+  // console.log(popupImageObject);
+  popupImageObject.src = this.link;
+  popupImageObject.alt = this.name;
+  popupImageObject.textContent = this.name;
 }
 
-popupList.forEach((popup) => {
-  popup.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-    if (evt.target.classList.contains("popup__close-button")) {
-      closePopup(popup);
-    }
-  });
-});
+// popupList.forEach((popup) => {
+//   popup.addEventListener("mousedown", (evt) => {
+//     if (evt.target.classList.contains("popup_opened")) {
+//       closePopup(popup);
+//     }
+//     if (evt.target.classList.contains("popup__close-button")) {
+//       closePopup(popup);
+//     }
+//   });
+// });
 
 profilePopupEditButton.addEventListener("click", handleProfileEditButton);
 profileEditForm.addEventListener("submit", (event) =>
