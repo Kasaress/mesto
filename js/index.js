@@ -1,6 +1,7 @@
 import { initialCards, validationConfig } from "./data.js";
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
+import { Section } from "./Section.js";
 
 const formValidators = {};
 const profilePopup = document.querySelector("#profilePopup");
@@ -119,7 +120,18 @@ cardAddForm.addEventListener("submit", (event) =>
   handleCardAddFormSubmit(event)
 );
 
-initialCards.map(function (item) {
-  insertCardToPage(createCard(item));
-});
+// initialCards.map(function (item) {
+//   insertCardToPage(createCard(item));
+// });
+
+const cardList = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const card = createCard(item);
+    cardList.addItem(card);
+  }
+}, '.elements');
+
+cardList.renderItems();
+
 enableFormsValidation(validationConfig);
