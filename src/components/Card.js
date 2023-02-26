@@ -34,9 +34,9 @@ export class Card {
     this._imageButton.addEventListener("click", () =>
       this._handleCardClick(this.name, this.link)
     );
-    this._cardImage.addEventListener('click', () => {
-      this._openImage({link: this.link, name: this.name});
-  });
+    this._cardImage.addEventListener("click", () => {
+      this._openImage({ link: this.link, name: this.name });
+    });
   }
   _createElement() {
     this._cardName.textContent = this.name;

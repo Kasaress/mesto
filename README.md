@@ -21,3 +21,5 @@
 * HTML
 * CSS (по БЭМу)
 * JS
+
+Запуск: npm run dev

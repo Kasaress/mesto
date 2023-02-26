@@ -1,3 +1,5 @@
 TODO
 .trunk
 .trunk/
+dist/
+node_modules/
