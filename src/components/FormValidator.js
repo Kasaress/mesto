@@ -65,8 +65,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
-    this._buttonSubmit.classList.add("button_inactive");
-    this._buttonSubmit.disabled = true;
+    this._deactivateButton();
   }
   enableValidation() {
     this._setFormEventListeners();

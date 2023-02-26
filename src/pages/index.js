@@ -1,12 +1,9 @@
-import "./pages/index.css";
+import "./index.css";
 import {
   initialCards,
   validationConfig,
   formValidators,
   profilePopupEditButton,
-  profileEditForm,
-  profileInputName,
-  profileInputJob,
   cardAddButton,
   elementsSelector,
   cardPopupSelector,
@@ -17,13 +14,13 @@ import {
   profileDescriptionSelector,
   profilePopupSelector,
   profileEditFormSelector,
-} from "./utils/constants.js";
-import { Card } from "./components/Card.js";
-import { FormValidator } from "./components/FormValidator.js";
-import { Section } from "./components/Section.js";
-import { PopupWithImage } from "./components/PopupWithImage.js";
-import { PopupWithForm } from "./components/PopupWithForm.js";
-import { UserInfo } from "./components/UserInfo.js";
+} from "../utils/constants.js";
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import { Section } from "../components/Section.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
 
 // попап с картинкой
 const popupImageObject = new PopupWithImage(imagePopupSelector);
@@ -33,15 +30,9 @@ function openImage({ link, name }) {
   popupImageObject.open(name, link);
 }
 
-function handleCardClick(name, link) {
-  popupImageObject.src = this.link;
-  popupImageObject.alt = this.name;
-  popupImageObject.textContent = this.name;
-}
-
 // добавление карточки места
 function createCard(item) {
-  const newCard = new Card(item, elementsSelector, handleCardClick, openImage);
+  const newCard = new Card(item, elementsSelector, openImage);
   return newCard.getNewCard();
 }
 
@@ -90,29 +81,14 @@ const popupEditProfile = new PopupWithForm(profilePopupSelector, (input) => {
 
 popupEditProfile.setEventListeners();
 
-function insertUserInfo() {
-  const info = userInfo.getUserInfo();
-  profileInputName.value = info.name;
-  profileInputJob.value = info.description;
-}
 
 function handleProfileEditButton() {
   formValidators[profileEditFormSelector].resetValidation();
-  insertUserInfo();
+  popupEditProfile.setInputValues(userInfo.getUserInfo());
   popupEditProfile.open();
 }
 
-function handleProfileEditFormSubmit(event) {
-  event.preventDefault();
-  insertUserInfo();
-  popupEditProfile.close();
-}
-
 profilePopupEditButton.addEventListener("click", handleProfileEditButton);
-
-profileEditForm.addEventListener("submit", (event) =>
-  handleProfileEditFormSubmit(event)
-);
 
 // включаем валидацию
 function enableFormsValidation(config) {
